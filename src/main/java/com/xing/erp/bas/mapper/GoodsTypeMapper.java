@@ -1,7 +1,9 @@
 package com.xing.erp.bas.mapper;
 
 import com.xing.erp.bas.model.GoodsType;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface GoodsTypeMapper {
     int deleteByPrimaryKey(Integer uuid);
 
