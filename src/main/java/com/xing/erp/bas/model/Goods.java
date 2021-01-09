@@ -1,5 +1,8 @@
 package com.xing.erp.bas.model;
 
+import lombok.ToString;
+
+@ToString
 public class Goods {
     private Integer uuid;
 
