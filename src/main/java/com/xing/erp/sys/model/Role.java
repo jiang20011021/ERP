@@ -1,32 +1,54 @@
 package com.xing.erp.sys.model;
 
 public class Role {
-    private Integer uuid;
+    private Long roleid;
 
-    private String name;
+    private String rolename;
 
-    public Role(Integer uuid, String name) {
-        this.uuid = uuid;
-        this.name = name;
+    private String roledesc;
+
+    private Integer roleflag;
+
+    public Role(Long roleid, String rolename, String roledesc, Integer roleflag) {
+        this.roleid = roleid;
+        this.rolename = rolename;
+        this.roledesc = roledesc;
+        this.roleflag = roleflag;
     }
 
     public Role() {
         super();
     }
 
-    public Integer getUuid() {
-        return uuid;
+    public Long getRoleid() {
+        return roleid;
     }
 
-    public void setUuid(Integer uuid) {
-        this.uuid = uuid;
+    public void setRoleid(Long roleid) {
+        this.roleid = roleid;
     }
 
-    public String getName() {
-        return name;
+    public String getRolename() {
+        return rolename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRolename(String rolename) {
+        this.rolename = rolename;
+    }
+
+    public String getRoledesc() {
+        return roledesc;
+    }
+
+    public void setRoledesc(String roledesc) {
+        this.roledesc = roledesc;
+    }
+
+    public Integer getRoleflag() {
+        return roleflag;
+    }
+
+    public void setRoleflag(Integer roleflag) {
+        this.roleflag = roleflag;
     }
 }
