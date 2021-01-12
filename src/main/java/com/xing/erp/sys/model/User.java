@@ -1,7 +1,10 @@
 package com.xing.erp.sys.model;
 
+import lombok.Builder;
+
 import java.util.Date;
 
+@Builder
 public class User {
     private Integer userid;
 

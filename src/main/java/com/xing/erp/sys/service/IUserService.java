@@ -1,13 +1,11 @@
-package com.xing.erp.sys.mapper;
+package com.xing.erp.sys.service;
 
 import com.xing.erp.sys.model.TreeNode;
 import com.xing.erp.sys.model.User;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface UserMapper {
+public interface IUserService {
     int deleteByPrimaryKey(Integer userid);
 
     int insert(User record);
