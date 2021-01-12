@@ -1,8 +1,5 @@
 package com.xing.erp.bas.model;
 
-import lombok.ToString;
-
-@ToString
 public class Goods {
     private Integer uuid;
 
@@ -10,7 +7,7 @@ public class Goods {
 
     private String origin;
 
-    private String producer;
+    private Integer producer;
 
     private String unit;
 
@@ -20,7 +17,7 @@ public class Goods {
 
     private Integer goodstypeuuid;
 
-    public Goods(Integer uuid, String name, String origin, String producer, String unit, Integer inprice, Integer outprice, Integer goodstypeuuid) {
+    public Goods(Integer uuid, String name, String origin, Integer producer, String unit, Integer inprice, Integer outprice, Integer goodstypeuuid) {
         this.uuid = uuid;
         this.name = name;
         this.origin = origin;
@@ -59,11 +56,11 @@ public class Goods {
         this.origin = origin;
     }
 
-    public String getProducer() {
+    public Integer getProducer() {
         return producer;
     }
 
-    public void setProducer(String producer) {
+    public void setProducer(Integer producer) {
         this.producer = producer;
     }
 

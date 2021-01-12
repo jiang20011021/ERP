@@ -1,10 +1,8 @@
-package com.xing.erp.bas.mapper;
+package com.xing.erp.bas.service;
 
 import com.xing.erp.bas.model.Store;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface StoreMapper {
+public interface IStoreService {
     int deleteByPrimaryKey(Integer uuid);
 
     int insert(Store record);

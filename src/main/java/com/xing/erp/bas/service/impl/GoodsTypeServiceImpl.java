@@ -1,36 +1,44 @@
 package com.xing.erp.bas.service.impl;
 
+import com.xing.erp.bas.mapper.GoodsTypeMapper;
 import com.xing.erp.bas.model.GoodsType;
 import com.xing.erp.bas.service.IGoodsTypeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GoodsTypeServiceImpl implements IGoodsTypeService {
+
+    @Autowired
+    private GoodsTypeMapper goodsTypeMapper;
+
     @Override
     public int deleteByPrimaryKey(Integer uuid) {
-        return 0;
+        return goodsTypeMapper.deleteByPrimaryKey(uuid);
     }
 
     @Override
     public int insert(GoodsType record) {
-        return 0;
+        return goodsTypeMapper.insert(record);
     }
 
     @Override
     public int insertSelective(GoodsType record) {
-        return 0;
+        return goodsTypeMapper.insertSelective(record);
     }
 
     @Override
     public GoodsType selectByPrimaryKey(Integer uuid) {
-        return null;
+        return goodsTypeMapper.selectByPrimaryKey(uuid);
     }
 
     @Override
     public int updateByPrimaryKeySelective(GoodsType record) {
-        return 0;
+        return goodsTypeMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(GoodsType record) {
-        return 0;
+        return updateByPrimaryKey(record);
     }
 }
