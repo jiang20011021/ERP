@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xing.erp.pur.mapper.OrdersMapper" >
+  <resultMap id="BaseResultMap" type="com.xing.erp.pur.model.Orders" >
+    <constructor >
+      <idArg column="UUID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CREATETIME" jdbcType="DATE" javaType="java.util.Date" />
+      <arg column="CHECKTIME" jdbcType="DATE" javaType="java.util.Date" />
+      <arg column="STARTTIME" jdbcType="DATE" javaType="java.util.Date" />
+      <arg column="ENDTIME" jdbcType="DATE" javaType="java.util.Date" />
+      <arg column="TYPE" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="CREATER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHECKER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STARTER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENDER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SUPPLIERUUID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="TOTALMONEY" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="STATE" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="WAYBILLSN" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    UUID, CREATETIME, CHECKTIME, STARTTIME, ENDTIME, TYPE, CREATER, CHECKER, STARTER, 
+    ENDER, SUPPLIERUUID, TOTALMONEY, STATE, WAYBILLSN
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where UUID = #{uuid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from orders
+    where UUID = #{uuid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xing.erp.pur.model.Orders" >
+    insert into orders (UUID, CREATETIME, CHECKTIME, 
+      STARTTIME, ENDTIME, TYPE, CREATER, 
+      CHECKER, STARTER, ENDER, 
+      SUPPLIERUUID, TOTALMONEY, STATE, 
+      WAYBILLSN)
+    values (#{uuid,jdbcType=INTEGER}, #{createtime,jdbcType=DATE}, #{checktime,jdbcType=DATE}, 
+      #{starttime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, #{type,jdbcType=CHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{checker,jdbcType=VARCHAR}, #{starter,jdbcType=VARCHAR}, #{ender,jdbcType=VARCHAR}, 
+      #{supplieruuid,jdbcType=INTEGER}, #{totalmoney,jdbcType=REAL}, #{state,jdbcType=CHAR}, 
+      #{waybillsn,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xing.erp.pur.model.Orders" >
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="createtime != null" >
+        CREATETIME,
+      </if>
+      <if test="checktime != null" >
+        CHECKTIME,
+      </if>
+      <if test="starttime != null" >
+        STARTTIME,
+      </if>
+      <if test="endtime != null" >
+        ENDTIME,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="creater != null" >
+        CREATER,
+      </if>
+      <if test="checker != null" >
+        CHECKER,
+      </if>
+      <if test="starter != null" >
+        STARTER,
+      </if>
+      <if test="ender != null" >
+        ENDER,
+      </if>
+      <if test="supplieruuid != null" >
+        SUPPLIERUUID,
+      </if>
+      <if test="totalmoney != null" >
+        TOTALMONEY,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="waybillsn != null" >
+        WAYBILLSN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        #{uuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="checktime != null" >
+        #{checktime,jdbcType=DATE},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="checker != null" >
+        #{checker,jdbcType=VARCHAR},
+      </if>
+      <if test="starter != null" >
+        #{starter,jdbcType=VARCHAR},
+      </if>
+      <if test="ender != null" >
+        #{ender,jdbcType=VARCHAR},
+      </if>
+      <if test="supplieruuid != null" >
+        #{supplieruuid,jdbcType=INTEGER},
+      </if>
+      <if test="totalmoney != null" >
+        #{totalmoney,jdbcType=REAL},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="waybillsn != null" >
+        #{waybillsn,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xing.erp.pur.model.Orders" >
+    update orders
+    <set >
+      <if test="createtime != null" >
+        CREATETIME = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="checktime != null" >
+        CHECKTIME = #{checktime,jdbcType=DATE},
+      </if>
+      <if test="starttime != null" >
+        STARTTIME = #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null" >
+        ENDTIME = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        CREATER = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="checker != null" >
+        CHECKER = #{checker,jdbcType=VARCHAR},
+      </if>
+      <if test="starter != null" >
+        STARTER = #{starter,jdbcType=VARCHAR},
+      </if>
+      <if test="ender != null" >
+        ENDER = #{ender,jdbcType=VARCHAR},
+      </if>
+      <if test="supplieruuid != null" >
+        SUPPLIERUUID = #{supplieruuid,jdbcType=INTEGER},
+      </if>
+      <if test="totalmoney != null" >
+        TOTALMONEY = #{totalmoney,jdbcType=REAL},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=CHAR},
+      </if>
+      <if test="waybillsn != null" >
+        WAYBILLSN = #{waybillsn,jdbcType=INTEGER},
+      </if>
+    </set>
+    where UUID = #{uuid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xing.erp.pur.model.Orders" >
+    update orders
+    set CREATETIME = #{createtime,jdbcType=DATE},
+      CHECKTIME = #{checktime,jdbcType=DATE},
+      STARTTIME = #{starttime,jdbcType=DATE},
+      ENDTIME = #{endtime,jdbcType=DATE},
+      TYPE = #{type,jdbcType=CHAR},
+      CREATER = #{creater,jdbcType=VARCHAR},
+      CHECKER = #{checker,jdbcType=VARCHAR},
+      STARTER = #{starter,jdbcType=VARCHAR},
+      ENDER = #{ender,jdbcType=VARCHAR},
+      SUPPLIERUUID = #{supplieruuid,jdbcType=INTEGER},
+      TOTALMONEY = #{totalmoney,jdbcType=REAL},
+      STATE = #{state,jdbcType=CHAR},
+      WAYBILLSN = #{waybillsn,jdbcType=INTEGER}
+    where UUID = #{uuid,jdbcType=INTEGER}
+  </update>
+</mapper>
