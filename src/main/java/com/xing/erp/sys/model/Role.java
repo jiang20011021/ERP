@@ -1,5 +1,10 @@
 package com.xing.erp.sys.model;
 
+import lombok.Builder;
+import lombok.ToString;
+
+@ToString
+@Builder
 public class Role {
     private Long roleid;
 

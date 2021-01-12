@@ -3,13 +3,13 @@ package com.xing.erp.sys.mapper;
 import com.xing.erp.sys.model.User;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(Long userid);
+    int deleteByPrimaryKey(Integer userid);
 
     int insert(User record);
 
     int insertSelective(User record);
 
-    User selectByPrimaryKey(Long userid);
+    User selectByPrimaryKey(Integer userid);
 
     int updateByPrimaryKeySelective(User record);
 
