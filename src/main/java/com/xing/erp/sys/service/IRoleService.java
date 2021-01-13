@@ -1,14 +1,11 @@
-package com.xing.erp.sys.mapper;
+package com.xing.erp.sys.service;
 
+import com.xing.erp.com.util.PageBean;
 import com.xing.erp.sys.model.Role;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface RoleMapper {
-
+public interface IRoleService {
     int deleteByPrimaryKey(Long roleid);
 
     int insert(Role record);
@@ -22,12 +19,13 @@ public interface RoleMapper {
     int updateByPrimaryKey(Role record);
 
     //分页查询角色
-    List<Role> selectRolePage(Role role);
+    List<Role> selectRolePage(Role role, PageBean pageBean);
+
     //添加角色
     //删除角色
     //编辑角色
 
-    //根据角色id获取菜单id集合
+    //根据角色id获取菜单id
     List<Integer> selectByTreeNodeId(Long roleId);
 
     //添加角色权限

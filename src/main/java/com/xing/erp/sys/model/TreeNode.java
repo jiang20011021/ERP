@@ -1,6 +1,6 @@
 package com.xing.erp.sys.model;
 
-public class Module {
+public class TreeNode {
     private Integer id;
 
     private Integer pid;
@@ -13,7 +13,7 @@ public class Module {
 
     private Integer sort;
 
-    public Module(Integer id, Integer pid, String text, String icon, String url, Integer sort) {
+    public TreeNode(Integer id, Integer pid, String text, String icon, String url, Integer sort) {
         this.id = id;
         this.pid = pid;
         this.text = text;
@@ -22,7 +22,7 @@ public class Module {
         this.sort = sort;
     }
 
-    public Module() {
+    public TreeNode() {
         super();
     }
 

@@ -1,12 +1,11 @@
-package com.xing.erp.pur.mapper;
+package com.xing.erp.pur.service;
 
 import com.xing.erp.pur.model.Orders;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface OrdersMapper {
+public interface IOrdersService {
     int deleteByPrimaryKey(Integer uuid);
 
     int insert(Orders record);

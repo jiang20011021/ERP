@@ -1,10 +1,8 @@
-package com.xing.erp.bas.mapper;
+package com.xing.erp.bas.service;
 
 import com.xing.erp.bas.model.Supplier;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface SupplierMapper {
+public interface ISupplierService {
     int deleteByPrimaryKey(Integer uuid);
 
     int insert(Supplier record);

@@ -2,10 +2,10 @@ package com.xing.erp.pur.model;
 
 import java.util.Date;
 
-public class OrderDetail {
-    private Integer uuid;
+public class OrdersDetail {
+    private Integer orderdetailid;
 
-    private Integer goodsuuid;
+    private Integer goodsid;
 
     private String goodsname;
 
@@ -19,44 +19,44 @@ public class OrderDetail {
 
     private String ender;
 
-    private Integer storeuuid;
+    private Integer storeid;
 
     private String state;
 
-    private Integer ordersuuid;
+    private Integer ordersid;
 
-    public OrderDetail(Integer uuid, Integer goodsuuid, String goodsname, Float price, Integer num, Float money, Date endtime, String ender, Integer storeuuid, String state, Integer ordersuuid) {
-        this.uuid = uuid;
-        this.goodsuuid = goodsuuid;
+    public OrdersDetail(Integer orderdetailid, Integer goodsid, String goodsname, Float price, Integer num, Float money, Date endtime, String ender, Integer storeid, String state, Integer ordersid) {
+        this.orderdetailid = orderdetailid;
+        this.goodsid = goodsid;
         this.goodsname = goodsname;
         this.price = price;
         this.num = num;
         this.money = money;
         this.endtime = endtime;
         this.ender = ender;
-        this.storeuuid = storeuuid;
+        this.storeid = storeid;
         this.state = state;
-        this.ordersuuid = ordersuuid;
+        this.ordersid = ordersid;
     }
 
-    public OrderDetail() {
+    public OrdersDetail() {
         super();
     }
 
-    public Integer getUuid() {
-        return uuid;
+    public Integer getOrderdetailid() {
+        return orderdetailid;
     }
 
-    public void setUuid(Integer uuid) {
-        this.uuid = uuid;
+    public void setOrderdetailid(Integer orderdetailid) {
+        this.orderdetailid = orderdetailid;
     }
 
-    public Integer getGoodsuuid() {
-        return goodsuuid;
+    public Integer getGoodsid() {
+        return goodsid;
     }
 
-    public void setGoodsuuid(Integer goodsuuid) {
-        this.goodsuuid = goodsuuid;
+    public void setGoodsid(Integer goodsid) {
+        this.goodsid = goodsid;
     }
 
     public String getGoodsname() {
@@ -107,12 +107,12 @@ public class OrderDetail {
         this.ender = ender;
     }
 
-    public Integer getStoreuuid() {
-        return storeuuid;
+    public Integer getStoreid() {
+        return storeid;
     }
 
-    public void setStoreuuid(Integer storeuuid) {
-        this.storeuuid = storeuuid;
+    public void setStoreid(Integer storeid) {
+        this.storeid = storeid;
     }
 
     public String getState() {
@@ -123,11 +123,11 @@ public class OrderDetail {
         this.state = state;
     }
 
-    public Integer getOrdersuuid() {
-        return ordersuuid;
+    public Integer getOrdersid() {
+        return ordersid;
     }
 
-    public void setOrdersuuid(Integer ordersuuid) {
-        this.ordersuuid = ordersuuid;
+    public void setOrdersid(Integer ordersid) {
+        this.ordersid = ordersid;
     }
 }

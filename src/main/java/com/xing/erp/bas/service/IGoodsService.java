@@ -1,6 +1,7 @@
 package com.xing.erp.bas.service;
 
 import com.xing.erp.bas.model.Goods;
+import org.springframework.stereotype.Repository;
 
 public interface IGoodsService {
     int deleteByPrimaryKey(Integer uuid);

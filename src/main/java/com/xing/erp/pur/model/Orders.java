@@ -23,15 +23,15 @@ public class Orders {
 
     private String ender;
 
-    private Integer supplieruuid;
+    private String supplierid;
 
-    private Float totalmoney;
+    private Float totalmony;
 
     private String state;
 
     private Integer waybillsn;
 
-    public Orders(Integer uuid, Date createtime, Date checktime, Date starttime, Date endtime, String type, String creater, String checker, String starter, String ender, Integer supplieruuid, Float totalmoney, String state, Integer waybillsn) {
+    public Orders(Integer uuid, Date createtime, Date checktime, Date starttime, Date endtime, String type, String creater, String checker, String starter, String ender, String supplierid, Float totalmony, String state, Integer waybillsn) {
         this.uuid = uuid;
         this.createtime = createtime;
         this.checktime = checktime;
@@ -42,8 +42,8 @@ public class Orders {
         this.checker = checker;
         this.starter = starter;
         this.ender = ender;
-        this.supplieruuid = supplieruuid;
-        this.totalmoney = totalmoney;
+        this.supplierid = supplierid;
+        this.totalmony = totalmony;
         this.state = state;
         this.waybillsn = waybillsn;
     }
@@ -132,20 +132,20 @@ public class Orders {
         this.ender = ender;
     }
 
-    public Integer getSupplieruuid() {
-        return supplieruuid;
+    public String getSupplierid() {
+        return supplierid;
     }
 
-    public void setSupplieruuid(Integer supplieruuid) {
-        this.supplieruuid = supplieruuid;
+    public void setSupplierid(String supplierid) {
+        this.supplierid = supplierid;
     }
 
-    public Float getTotalmoney() {
-        return totalmoney;
+    public Float getTotalmony() {
+        return totalmony;
     }
 
-    public void setTotalmoney(Float totalmoney) {
-        this.totalmoney = totalmoney;
+    public void setTotalmony(Float totalmony) {
+        this.totalmony = totalmony;
     }
 
     public String getState() {
