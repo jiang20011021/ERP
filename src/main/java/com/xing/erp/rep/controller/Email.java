@@ -1,4 +1,4 @@
-package com.xing.erp.coller;
+package com.xing.erp.rep.controller;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
