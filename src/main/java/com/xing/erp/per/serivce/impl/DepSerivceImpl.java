@@ -1,11 +1,19 @@
-package com.xing.erp.per.service.impl;
+package com.xing.erp.per.serivce.impl;
 
+import com.xing.erp.com.util.PageBean;
 import com.xing.erp.per.mapper.DepMapper;
 import com.xing.erp.per.model.Dep;
-import com.xing.erp.per.service.IDepService;
+import com.xing.erp.per.serivce.IDepSerivce;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class DepServiceImpl implements IDepService {
+import java.util.List;
 
+
+@Service
+public class DepSerivceImpl implements IDepSerivce {
+
+    @Autowired
     private DepMapper depMapper;
 
     @Override
@@ -37,4 +45,10 @@ public class DepServiceImpl implements IDepService {
     public int updateByPrimaryKey(Dep record) {
         return depMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<Dep> querypager(Dep dep, PageBean pageBean) {
+        return depMapper.querypager(dep);
+    }
+
 }

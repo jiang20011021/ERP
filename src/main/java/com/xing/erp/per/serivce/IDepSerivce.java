@@ -1,8 +1,12 @@
-package com.xing.erp.per.service;
+package com.xing.erp.per.serivce;
 
+
+import com.xing.erp.com.util.PageBean;
 import com.xing.erp.per.model.Dep;
 
-public interface IDepService {
+import java.util.List;
+
+public interface IDepSerivce {
     int deleteByPrimaryKey(Integer uuid);
 
     int insert(Dep record);
@@ -14,4 +18,8 @@ public interface IDepService {
     int updateByPrimaryKeySelective(Dep record);
 
     int updateByPrimaryKey(Dep record);
+
+    List<Dep> querypager(Dep dep, PageBean pageBean);
+
+
 }
