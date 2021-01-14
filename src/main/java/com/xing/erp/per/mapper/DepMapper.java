@@ -21,7 +21,7 @@ public interface DepMapper {
 
     int updateByPrimaryKey(Dep record);
 
-    List<Dep> querypager(Dep dep);
+    List<Dep> query(Dep dep);
 
 
 }

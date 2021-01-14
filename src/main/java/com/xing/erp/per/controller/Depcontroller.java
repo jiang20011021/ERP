@@ -24,9 +24,9 @@ public class Depcontroller {
      * @param pageBean
      * @return
      */
-    @RequestMapping("/querypager")
+    @RequestMapping("/query")
     public Map<String,Object> query(Dep dep, PageBean pageBean) {
-        List<Dep> deps = depSerivce.querypager(dep,pageBean);
+        List<Dep> deps = depSerivce.query(dep,pageBean);
         Map<String,Object> map=new HashMap<>();
         map.put("rwos",deps);
         map.put("tatol",pageBean.getTotal());

@@ -47,8 +47,8 @@ public class DepSerivceImpl implements IDepSerivce {
     }
 
     @Override
-    public List<Dep> querypager(Dep dep, PageBean pageBean) {
-        return depMapper.querypager(dep);
+    public List<Dep> query(Dep dep, PageBean pageBean) {
+        return depMapper.query(dep);
     }
 
 }

@@ -19,7 +19,7 @@ public interface IDepSerivce {
 
     int updateByPrimaryKey(Dep record);
 
-    List<Dep> querypager(Dep dep, PageBean pageBean);
+    List<Dep> query(Dep dep, PageBean pageBean);
 
 
 }
