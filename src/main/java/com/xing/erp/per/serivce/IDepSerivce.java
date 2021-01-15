@@ -1,25 +1,26 @@
 package com.xing.erp.per.serivce;
 
 
+import com.xing.erp.com.util.JsonResponseBody;
 import com.xing.erp.com.util.PageBean;
 import com.xing.erp.per.model.Dep;
 
 import java.util.List;
 
 public interface IDepSerivce {
-    int deleteByPrimaryKey(Integer uuid);
+    JsonResponseBody<?> deleteByPrimaryKey(Integer uuid);
 
-    int insert(Dep record);
+    JsonResponseBody<?> insert(Dep record);
 
-    int insertSelective(Dep record);
+    JsonResponseBody<?> insertSelective(Dep record);
 
-    Dep selectByPrimaryKey(Integer uuid);
+    JsonResponseBody<?> selectByPrimaryKey(Integer uuid);
 
-    int updateByPrimaryKeySelective(Dep record);
+    JsonResponseBody<?> updateByPrimaryKeySelective(Dep record);
 
-    int updateByPrimaryKey(Dep record);
+    JsonResponseBody<?> updateByPrimaryKey(Dep record);
 
-    List<Dep> query(Dep dep, PageBean pageBean);
+    JsonResponseBody<?> query(Dep dep, PageBean pageBean);
 
 
 }

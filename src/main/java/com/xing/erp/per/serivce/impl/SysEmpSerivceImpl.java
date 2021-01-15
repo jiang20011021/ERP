@@ -1,7 +1,11 @@
 package com.xing.erp.per.serivce.impl;
 
+import com.xing.erp.com.execption.BusinessException;
+import com.xing.erp.com.util.JsonResponseBody;
 import com.xing.erp.com.util.PageBean;
+import com.xing.erp.com.util.ResponseStatus;
 import com.xing.erp.per.mapper.SysEmpMapper;
+import com.xing.erp.per.model.Dep;
 import com.xing.erp.per.model.SysEmp;
 import com.xing.erp.per.serivce.ISysEmpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,36 +20,61 @@ public class SysEmpSerivceImpl implements ISysEmpService {
     private SysEmpMapper sysEmpMapper;
 
     @Override
-    public int deleteByPrimaryKey(Integer uuid) {
-        return sysEmpMapper.deleteByPrimaryKey(uuid);
+    public JsonResponseBody<?> deleteByPrimaryKey(Integer uuid) {
+        int i=sysEmpMapper.deleteByPrimaryKey(uuid);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_203);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int insert(SysEmp record) {
-        return sysEmpMapper.insert(record);
+    public JsonResponseBody<?> insert(SysEmp record) {
+        int i=sysEmpMapper.insert(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_201);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int insertSelective(SysEmp record) {
-        return sysEmpMapper.insertSelective(record);
+    public JsonResponseBody<?> insertSelective(SysEmp record) {
+        int i=sysEmpMapper.insertSelective(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_201);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public SysEmp selectByPrimaryKey(Integer uuid) {
-        return sysEmpMapper.selectByPrimaryKey(uuid);
+    public JsonResponseBody<?> selectByPrimaryKey(Integer uuid) {
+        SysEmp sysEmp=sysEmpMapper.selectByPrimaryKey(uuid);
+        if (null==sysEmp){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_204);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int updateByPrimaryKeySelective(SysEmp record) {
-        return sysEmpMapper.updateByPrimaryKeySelective(record);
+    public JsonResponseBody<?> updateByPrimaryKeySelective(SysEmp record) {
+        int i=sysEmpMapper.updateByPrimaryKeySelective(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_201);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int updateByPrimaryKey(SysEmp record) {
-        return sysEmpMapper.updateByPrimaryKey(record);
+    public JsonResponseBody<?> updateByPrimaryKey(SysEmp record) {
+        int i=sysEmpMapper.updateByPrimaryKey(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_201);
+        }
+        return new JsonResponseBody<>();
     }
 
-    public List<SysEmp> querypager(SysEmp sysEmp, PageBean pageBean){
-        return sysEmpMapper.querypager(sysEmp);
+    public JsonResponseBody<?> querypager(SysEmp sysEmp, PageBean pageBean){
+        List<SysEmp> sysEmps = sysEmpMapper.querypager(sysEmp);
+        return new JsonResponseBody<>(sysEmps);
     }
 }

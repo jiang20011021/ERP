@@ -1,6 +1,8 @@
 package com.xing.erp.per.serivce.impl;
 
+import com.xing.erp.com.util.JsonResponseBody;
 import com.xing.erp.com.util.PageBean;
+import com.xing.erp.com.util.ResponseStatus;
 import com.xing.erp.per.mapper.DepMapper;
 import com.xing.erp.per.model.Dep;
 import com.xing.erp.per.serivce.IDepSerivce;
@@ -17,38 +19,62 @@ public class DepSerivceImpl implements IDepSerivce {
     private DepMapper depMapper;
 
     @Override
-    public int deleteByPrimaryKey(Integer uuid) {
-        return depMapper.deleteByPrimaryKey(uuid);
+    public JsonResponseBody<?> deleteByPrimaryKey(Integer uuid) {
+        int i=depMapper.deleteByPrimaryKey(uuid);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_203);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int insert(Dep record) {
-        return depMapper.insert(record);
+    public JsonResponseBody<?> insert(Dep record) {
+        int i=depMapper.insert(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_203);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int insertSelective(Dep record) {
-        return depMapper.insertSelective(record);
+    public JsonResponseBody<?> insertSelective(Dep record) {
+        int i=depMapper.insertSelective(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_203);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public Dep selectByPrimaryKey(Integer uuid) {
-        return depMapper.selectByPrimaryKey(uuid);
+    public JsonResponseBody<?> selectByPrimaryKey(Integer uuid) {
+        Dep dep = depMapper.selectByPrimaryKey(uuid);
+        if(null==dep)
+            return new JsonResponseBody<>(ResponseStatus.STATUS_202);
+        return new JsonResponseBody<>(dep);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(Dep record) {
-        return depMapper.updateByPrimaryKeySelective(record);
+    public JsonResponseBody<?> updateByPrimaryKeySelective(Dep record) {
+        int i=depMapper.updateByPrimaryKeySelective(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_203);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public int updateByPrimaryKey(Dep record) {
-        return depMapper.updateByPrimaryKey(record);
+    public JsonResponseBody<?> updateByPrimaryKey(Dep record) {
+        int i=depMapper.updateByPrimaryKey(record);
+        if (i<1){
+            return new JsonResponseBody<>(ResponseStatus.STATUS_203);
+        }
+        return new JsonResponseBody<>();
     }
 
     @Override
-    public List<Dep> query(Dep dep, PageBean pageBean) {
-        return depMapper.query(dep);
+    public JsonResponseBody<?> query(Dep dep, PageBean pageBean) {
+        List<Dep> query = depMapper.query(dep);
+        return new JsonResponseBody<>(query);
     }
 
 }
